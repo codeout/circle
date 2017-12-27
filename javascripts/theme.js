@@ -161,7 +161,7 @@ function deleteCookie(name) {
 
 $(document).ready(function () {
 	var burger_height;
-	var submenu_sum_width;
+	var submenu_sum_width = 0;
 	var topmenu_sum_width;
 	var overwidthed_flag = false;
 	var overwidthed_height;
@@ -177,11 +177,10 @@ $(document).ready(function () {
 
 	var $scwid = $(window).width();
 
-
 	//Перемещение mm-menu для создания плавающей менюшки
 	//Код перенесен в самое начало выполняемого скрипта
 		$('#main-menu').html( '<div class="main_menu">'+ $('#main-menu').html() + '</div>');
-		$('#main-menu .main_menu ul li').each(function(){
+		$('#main-menu .main_menu > ul > li').each(function(){
 				submenu_sum_width += $(this).outerWidth();
 				if( submenu_sum_width > $('.main_menu').outerWidth() - 2){
 					$(this).addClass('overwidth');
@@ -215,7 +214,7 @@ function calc_position(){
 		submenu_sum_width = 0;
 		var sm_delta = 2;
 
-		$('#main-menu .main_menu ul li').each(function(){
+		$('#main-menu .main_menu > ul > li').each(function(){
 			submenu_sum_width += $(this).outerWidth();
 			if( submenu_sum_width > $('.main_menu').outerWidth() - sm_delta){
 				$(this).addClass('overwidth');

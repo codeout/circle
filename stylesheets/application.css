@@ -1347,3 +1347,6 @@ BODY {
 }
 
 #login-form table {margin-top:5em; padding:1em; margin-left: auto; margin-right: auto; border: 2px solid #e8f3ff; background-color:#e8f3ff; }
+
+.journal h4 { text-align: right; }
+.journal-link { float: left; }
